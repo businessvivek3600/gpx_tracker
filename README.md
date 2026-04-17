@@ -44,3 +44,4 @@ This is a Flutter mobile app that tracks user location, saves it locally, and al
 * App works best when "Allow all the time" permission is granted
 * Background tracking depends on device OS restrictions
 # GPX-Tracker
+# GPX-Tracker
