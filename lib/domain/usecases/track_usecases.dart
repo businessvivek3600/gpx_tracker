@@ -20,4 +20,8 @@ class TrackUsecases {
   Future<List<TrackPointEntity>> fetchTrackPoints(int trackId) {
     return repository.getTrackPoints(trackId);
   }
+
+  Future<void> deleteTrack(int trackId) {
+    return repository.deleteTrack(trackId);
+  }
 }

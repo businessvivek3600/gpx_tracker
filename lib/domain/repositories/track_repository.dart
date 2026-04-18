@@ -7,4 +7,5 @@ abstract class TrackRepository {
   Future<List<TrackEntity>> getAllTracks();
   Future<TrackPointEntity> addTrackPoint(int trackId, double latitude, double longitude, DateTime timestamp);
   Future<List<TrackPointEntity>> getTrackPoints(int trackId);
+  Future<void> deleteTrack(int trackId);
 }

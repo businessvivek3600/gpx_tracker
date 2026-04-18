@@ -93,4 +93,14 @@ class LocalDatabase {
     );
     return result.map((json) => TrackPointModel.fromMap(json)).toList();
   }
+
+  Future<void> deleteTrack(int trackId) async {
+    final db = await instance.database;
+    await db.delete(
+      AppConstants.tableTracks,
+      where: 'id = ?',
+      whereArgs: [trackId],
+    );
+    // Track points are deleted automatically due to ON DELETE CASCADE
+  }
 }

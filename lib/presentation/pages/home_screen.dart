@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.primaryColor.withOpacity(0.2),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.2),
                       blurRadius: 30,
                       spreadRadius: 10,
                     )
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 child: Obx(() {
                   return Icon(
-                    controller.isTracking.value ? Icons.satellite_alt : Icons.location_off,
+                    controller.isTracking.value ? Icons.satellite_alt : Icons.location_on,
                     size: 80,
                     color: controller.isTracking.value ? AppTheme.secondaryColor : AppTheme.textSecondaryColor,
                   );
@@ -70,19 +70,38 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 48),
               Obx(() {
                 final isTracking = controller.isTracking.value;
-                return SizedBox(
-                  width: double.infinity,
-                  height: 60,
-                  child: ElevatedButton(
-                    onPressed: () => controller.toggleTracking(),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: isTracking ? AppTheme.errorColor : AppTheme.primaryColor,
+                return Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed:  isTracking ? null :() => controller.toggleTracking(),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isTracking ? AppTheme.errorColor : AppTheme.primaryColor,
+                        ),
+                        child: Text(
+                           'START TRACKING',
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    child: Text(
-                      isTracking ? 'STOP TRACKING' : 'START TRACKING',
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    SizedBox(height: 20,),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed:  isTracking ? () => controller.toggleTracking() :null,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isTracking ? AppTheme.errorColor : AppTheme.primaryColor,
+                        ),
+                        child: Text(
+                          'STOP TRACKING',
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 );
               }),
             ],

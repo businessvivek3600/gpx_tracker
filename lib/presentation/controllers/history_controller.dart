@@ -20,4 +20,9 @@ class HistoryController extends GetxController {
     tracks.assignAll(result);
     isLoading.value = false;
   }
+
+  Future<void> deleteTrack(int trackId) async {
+    await _usecases.deleteTrack(trackId);
+    tracks.removeWhere((track) => track.id == trackId);
+  }
 }

@@ -45,4 +45,9 @@ class TrackRepositoryImpl implements TrackRepository {
   Future<List<TrackPointEntity>> getTrackPoints(int trackId) async {
     return await localDatabase.getTrackPoints(trackId);
   }
+
+  @override
+  Future<void> deleteTrack(int trackId) async {
+    await localDatabase.deleteTrack(trackId);
+  }
 }

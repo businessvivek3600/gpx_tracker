@@ -23,10 +23,10 @@ This is a Flutter mobile app that tracks user location, saves it locally, and al
 
 ## Project structure
 
-* `core/` → common utilities (theme, constants, background service, GPX generator)
-* `data/` → database, models, repository implementation
-* `domain/` → entities, repository interface, usecases
-* `presentation/` → UI screens and controllers
+`core/` → common utilities (theme, constants, background service, GPX generator)
+`data/` → database, models, repository implementation
+`domain/` → entities, repository interface, usecases
+`presentation/` → UI screens and controllers
 
 ## Main features used
 
@@ -43,5 +43,14 @@ This is a Flutter mobile app that tracks user location, saves it locally, and al
 * Location permission is required (including background location)
 * App works best when "Allow all the time" permission is granted
 * Background tracking depends on device OS restrictions
-# GPX-Tracker
-# GPX-Tracker
+## System & Version Requirements
+
+To run and build this app, ensure your development environment meets the following version requirements:
+
+Dart SDK:** `>=3.12.0-304.0.dev`
+Flutter SDK: `master` channel or compatible with Dart 3.12+
+Java:`Java 17` 
+Android Gradle Plugin (AGP): `8.11.1`
+Kotlin: `2.2.20`
+iOS Target: Minimum iOS 12.0+ 
+# gpx_tracker
