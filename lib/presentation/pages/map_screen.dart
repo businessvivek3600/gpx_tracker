@@ -49,7 +49,7 @@ class MapScreen extends StatelessWidget {
           children: [
             TileLayer(
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-              userAgentPackageName: 'com.example.gpx_tracker',
+              userAgentPackageName: 'com.app.gpx_tracker',
             ),
             PolylineLayer(
               polylines: [
