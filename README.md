@@ -54,3 +54,4 @@ Android Gradle Plugin (AGP): `8.11.1`
 Kotlin: `2.2.20`
 iOS Target: Minimum iOS 12.0+ 
 # gpx_tracker
+# GPX-Tracker
